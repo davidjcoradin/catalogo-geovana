@@ -1,103 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo | Geovana Corradini - Representações</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f1f5f9;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .topbar {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            color: white;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
-        .topbar-left { display: flex; align-items: center; gap: 16px; }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        .btn-back { background: rgba(255,255,255,0.15); color: white; }
-        .btn-back:hover { background: rgba(255,255,255,0.25); }
-        .btn-download { background: white; color: #2563eb; }
-        .btn-download:hover { background: #f1f5f9; }
-        .topbar-title { font-size: 1.1rem; font-weight: 600; }
-        .pdf-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .pdf-container embed { width: 100%; height: 100%; border: none; }
-        .error-message {
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-        }
-        .error-message h2 { font-size: 1.3rem; margin-bottom: 12px; color: #1e293b; }
-        .error-message a { color: #2563eb; text-decoration: none; font-weight: 500; }
-        @media (max-width: 600px) {
-            .topbar { flex-direction: column; gap: 12px; align-items: stretch; }
-            .topbar-left { justify-content: center; }
-            .topbar-title { text-align: center; font-size: 1rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo | Geovana Corradini - Representações</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+background: #f1f5f9;
+height: 100vh;
+display: flex;
+flex-direction: column;
+}
+.topbar {
+background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+color: white;
+padding: 16px 20px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+}
+.topbar-left { display: flex; align-items: center; gap: 16px; }
+.btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-size: 0.9rem;
+font-weight: 500;
+transition: background 0.2s;
+}
+.btn-back { background: rgba(255,255,255,0.15); color: white; }
+.btn-back:hover { background: rgba(255,255,255,0.25); }
+.btn-download { background: white; color: #2563eb; }
+.btn-download:hover { background: #f1f5f9; }
+.topbar-title { font-size: 1.1rem; font-weight: 600; }
+.pdf-container {
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+.pdf-container iframe { width: 100%; height: 100%; border: none; }
+.error-message {
+text-align: center;
+padding: 40px;
+color: #64748b;
+}
+.error-message h2 { font-size: 1.3rem; margin-bottom: 12px; color: #1e293b; }
+.error-message a { color: #2563eb; text-decoration: none; font-weight: 500; }
+@media (max-width: 600px) {
+.topbar { flex-direction: column; gap: 12px; align-items: stretch; }
+.topbar-left { justify-content: center; }
+.topbar-title { text-align: center; font-size: 1rem; }
+}
+</style>
 </head>
 <body>
-    <div class="topbar">
-        <div class="topbar-left">
-            <a href="index.html" class="btn btn-back">← Voltar</a>
-            <span class="topbar-title" id="titulo">Carregando...</span>
-        </div>
-        <a href="#" id="download" class="btn btn-download" download>⬇ Download</a>
-    </div>
+<div class="topbar">
+<div class="topbar-left">
+<a href="index.html" class="btn btn-back">← Voltar</a>
+<div class="topbar-title" id="titulo">Catálogo</div>
+</div>
+<a href="#" class="btn btn-download" id="download">⬇ Baixar PDF</a>
+</div>
+<div class="pdf-container" id="pdf-container">
+<div class="error-message" id="error" style="display:none;">
+<h2>📄 Catálogo não encontrado</h2>
+<p>O arquivo PDF ainda não foi disponibilizado.</p>
+<br>
+<p>Entre em contato: <a href="https://wa.me/5511989637298">(11) 98963-7298</a></p>
+<br><br>
+<a href="index.html" class="btn btn-back" style="display:inline-block">← Voltar aos catálogos</a>
+</div>
+</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const arquivo = params.get('arquivo');
+const nome = params.get('nome');
 
-    <div class="pdf-container" id="pdf-container">
-        <div class="error-message" id="error" style="display:none;">
-            <h2>📄 Catálogo não encontrado</h2>
-            <p>O arquivo PDF ainda não foi disponibilizado.</p>
-            <br>
-            <p>Entre em contato: <a href="https://wa.me/5511989637298">(11) 98963-7298</a></p>
-            <br><br>
-            <a href="index.html" style="background:#2563eb;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;">← Voltar aos catálogos</a>
-        </div>
-    </div>
+document.getElementById('titulo').textContent = nome || 'Catálogo';
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const arquivo = params.get('arquivo');
-        const nome = params.get('nome') || 'Catálogo';
-
-        document.getElementById('titulo').textContent = nome;
-
-        if (arquivo) {
-            const embed = document.createElement('embed');
-            embed.src = arquivo;
-            embed.type = 'application/pdf';
-            document.getElementById('pdf-container').appendChild(embed);
-            document.getElementById('download').href = arquivo;
-        } else {
-            document.getElementById('error').style.display = 'block';
-        }
-    </script>
+if (arquivo) {
+    const iframe = document.createElement('iframe');
+    iframe.src = arquivo;
+    iframe.allow = 'autoplay';
+    document.getElementById('pdf-container').appendChild(iframe);
+    document.getElementById('download').href = arquivo;
+} else {
+    document.getElementById('error').style.display = 'block';
+}
+</script>
 </body>
 </html>
