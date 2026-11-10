@@ -6,7 +6,7 @@
 <script>
 // Nomes compostos e exceções: ajuste aqui se cadastrar novas marcas.
 const MARCAS=['RIO TIJUCAS','TOP RIO','CIAFLOR','BELLA GARDEM','BELLO CHARME','DOLCE HOME','GIRA IMPORTS','MINI TOYS','ZONA LIVRE','FREECOM','UNIKEHOME','HORAPLAST','RELOBRAZ','BANDEIRANTES','CASAVITA','CASCAVEL','DECORATTO','DCARTE','FENZZA','FORTAL','ALLMIX','AILTON','AZZU','BMB','CIM','FWB','GESSELE','GPX','INGA','LIDER','LYOR','MARES','MGV','PRODAC','WOLF','WOLFF','Y888','ZEIN','QX'];
-const aliases={'WOLFF':'WOLF'};
+const aliases={'WOLFF':'WOLFF'};
 function marcaDe(nome){const s=nome.trim().toUpperCase();return MARCAS.find(m=>s===m||s.startsWith(m+' '))||s.split(' ')[0]}
 function slug(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 let grupos=new Map(),selecionada=null;const content=document.getElementById('content'),search=document.getElementById('search'),count=document.getElementById('count');
